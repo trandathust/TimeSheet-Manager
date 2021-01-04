@@ -1,0 +1,7 @@
+.image-logo{
+	max-width: 300px;
+	max-height: 300px;
+	min-width: 300px;
+	max-height: 300px;
+	object-fit: cover;
+}
