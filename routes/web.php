@@ -10,7 +10,7 @@ Route::get('logout', 'LoginController@Logout')->name('logout');
 Route::middleware(['setting'])->group(function () {
     Route::middleware(['CheckCTV'])->group(function () {
         //cộng tác viên
-        Route::prefix('cong-tac-vien')->group(function () {
+        Route::prefix('nhan-vien')->group(function () {
             Route::get('trang-chu', 'CongTacVien\DashboardController@getDashboard')->name('ctv.Dashboard');
 
             //thông tin người dùng

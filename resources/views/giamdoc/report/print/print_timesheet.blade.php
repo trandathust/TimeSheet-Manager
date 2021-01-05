@@ -31,7 +31,7 @@
                         <div class="card-body">
                             <table class="table table-hover">
                                 <tr>
-                                    <td>Tên cộng tác viên: {{$user[0] -> name}}</td>
+                                    <td>Tên : {{$user[0] -> name}}</td>
                                     <td>Số điện thoại: {{$user[0] -> phone }}</td>
                                     <td>Email: {{$user[0] -> email}}</td>
                                 </tr>
@@ -73,7 +73,7 @@
                                 <td colspan="11">
                                     <table class="table table-condensed total-result">
                                         <tr>
-                                            <td><b>Tổng giờ làm cộng tác viên đánh giá:</b></td>
+                                            <td><b>Tổng giờ làm nhân viên đánh giá:</b></td>
                                             <td>{{$user[0] -> total_hour}}</td>
                                         </tr>
                                         <tr>

@@ -35,7 +35,7 @@
                         <div class="card-body">
                             <table class="table table-hover">
                                 <tr>
-                                    <td>Tên cộng tác viên: {{$user[0]->name}}</td>
+                                    <td>Tên nhân viên: {{$user[0]->name}}</td>
                                 </tr>
                                 <tr>
                                     <td>Số điện thoại: {{$user[0]->phone}}</td>
@@ -44,7 +44,7 @@
                                     <td>Email: {{$user[0]->email}}</td>
                                 </tr>
                                 <tr>
-                                    <td>Chức vụ: Cộng tác viên</td>
+                                    <td>Chức vụ: Nhân viên</td>
                                 </tr>
                                 <tr>
                                     <td>Lý do chi: Lương tháng {{$month}} năm {{$year}}</td>

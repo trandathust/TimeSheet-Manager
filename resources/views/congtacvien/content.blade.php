@@ -16,11 +16,11 @@
     <div class="content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-7">
                     <div class="card">
                         <div class="card-header border-0">
                             <div class="d-flex justify-content-between">
-                                <h3 class="card-title"><b>Thống Kê Trong Tháng</b></h3>
+                                <h3 class="card-title"><b>Thống Kê</b></h3>
                             </div>
                         </div>
                         <div class="card-body">
@@ -52,44 +52,6 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="col-lg-7">
-                    <div class="card">
-                        <div class="card-header border-0">
-                            <div class="d-flex justify-content-between">
-                                <h3 class="card-title"><b>Thống Kê Tiền Lương Trong Năm</b></h3>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="d-flex">
-                                <p class="d-flex flex-column">
-                                    <span class="text-bold text-lg">
-                                        <i class="fas fa-dollar-sign"></i>
-                                        {{number_format($total_salary_of_year)}}đ </span>
-                                    <span>Tổng tiền lương</span>
-                                </p>
-                                <p class="ml-auto d-flex flex-column text-right">
-                                    <span class="text-success">
-                                        {{$total_hour_of_year}}h
-                                    </span>
-                                    <span class="text-muted">Giờ làm việc</span>
-                                </p>
-                            </div>
-                            <div class="position-relative mb-4">
-                                <canvas id="salary-chart" height="210" width="500"
-                                    data-salary="{{json_encode($total_hour_each_Month)}}"></canvas>
-                            </div>
-
-                            <div class="d-flex flex-row justify-content-end">
-                                <span class="mr-2">
-                                    <i class="fas fa-square text-primary"></i> Tiền lương
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
                 <div class="col-lg-5">
                     <div class="card">
                         <div class="card-body">
@@ -197,17 +159,12 @@
                                 </td>
                                 <td>
                                     @if($item -> date_work <= $setting_time_ctv && $item -> status_manager == 0)
-                                        @elseif($item -> confirm_hour != null or $item -> confirm_effective != null)
                                         @elseif($item ->date_work > $setting_time_ctv)
                                         <a href="{{route('ctv.getEditTimesheet',['id'=> $item -> id])}}"
                                             class="btn btn-primary"><i class="fas fa-edit"></i></a>
-                                        <a data-url="{{route('ctv.deleteTimesheet',['id'=> $item -> id])}}"
-                                            class="btn btn-danger action_delete"><i class="fas fa-trash-alt"></i></a>
                                         @else
                                         <a href="{{route('ctv.getEditTimesheet',['id'=> $item -> id])}}"
                                             class="btn btn-primary"><i class="fas fa-edit"></i></a>
-                                        <a data-url="{{route('ctv.deleteTimesheet',['id'=> $item -> id])}}"
-                                            class="btn btn-danger action_delete"><i class="fas fa-trash-alt"></i></a>
                                         @endif
                                 </td>
                             </tr>
@@ -233,6 +190,5 @@
 <script src="{{asset('adminlte/plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
 <script src="{{asset('adminlte/plugins/chart.js/Chart.min.js')}}"></script>
 <script src="{{asset('vendor/congtacvien/dashboard/dashboard.js')}}"></script>
-<script src="{{asset('vendor/congtacvien/timesheet/delete.js')}}"></script>
-<script src="{{asset('vendor/sweetalert/sweetalert2@9.js')}}"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 @endsection
